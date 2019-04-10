@@ -1,0 +1,8 @@
+{
+  "name": "bankaccenture",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "a8029128"
+}

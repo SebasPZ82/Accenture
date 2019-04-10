@@ -1,0 +1,118 @@
+page-login {
+
+    .placeholder-text{
+        font-size: 0.9em;
+    }
+
+    .icon {
+        color: #008237
+    }
+
+    .list .item, .list .item-complex .item-content {
+        background: rgba(255,255,255,0);
+    }
+
+    .item .item-content.activated {
+        background-color: purple !important;
+    }
+
+    .list-initial{
+        position: absolute;
+        top: 25%
+    }
+
+    .button-initial{
+        position: absolute;
+        top: 80%;
+    }
+
+    .scroll-content{
+        padding-bottom: 0px !important;
+    }
+
+    .img-focus{
+        margin: auto;
+        display: block;
+        margin-left: 9%;
+    }
+
+    .getstart {
+        background-image: url('../../assets/imgs/fondo.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
+    ::-webkit-input-placeholder {
+        text-align: right;
+      }
+
+    .form-data{
+        display: block;
+    }
+
+    ion-img.imgBigBack{
+        width: 100%;
+        min-height: 80px;
+        margin-top: 15%;
+        background-color: transparent;
+    }
+
+    ion-img.imgBigBack img{
+        margin: auto
+    }
+
+    .invalid {
+        border-bottom: 1px solid #FF6153;
+    }
+    .errorMessage {
+        color: red;
+            font-size: 10px;
+            margin-left: 20px;
+    }
+
+/*     .login-content {
+        background: rgba(181, 190, 188, 0.151);
+     
+        .logo-row {
+          padding-top: 50px;
+          padding-bottom: 20px;
+        }
+     
+        .login-box {
+          background: #399F8B;
+          padding: 20px 20px 0px 20px;
+          margin-top: 30px;
+        }
+     
+        ion-row {
+           align-items: center;
+           text-align: center;
+         }
+     
+         ion-item {
+             border-radius: 30px !important;
+             padding-left: 30px !important;
+             font-size: 0.9em;
+             margin-bottom: 10px;
+             border: 1px solid #ffffff;
+             border-bottom: 0px !important;
+             box-shadow: none !important;
+         }
+     
+         .item-inner {
+           border-bottom-color: #ffffff !important;
+           box-shadow: none !important;
+         }
+     
+         .submit-btn {
+           background: rgb(169, 190, 185);
+           border-radius: 30px !important;
+           border: 1px solid #ffffff;
+         }
+     
+         .register-btn {
+           color: #ffffff;
+           font-size: 0.8em;
+         }
+      } */
+}

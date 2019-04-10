@@ -1,0 +1,65 @@
+<ion-content class="content" padding>
+  <br>
+  <ion-img class="imgBigBack"
+    src="https://www.accenture.com/t20180820T080654Z__w__/co-es/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.PNG">
+  </ion-img>
+  <ion-list>
+    <form [formGroup]="validForm" class="form-data" (ngSubmit)="registerUserAccenture()">
+      <ion-item>
+        <ion-label floating>Primer Nombre</ion-label>
+        <ion-input type="text" class="placeholder-text" formControlName="firstname"
+          [class.invalid]="!validForm.controls.firstname.valid  && validForm.controls.firstname.dirty">
+        </ion-input>
+      </ion-item>
+
+      <p class="errorMessage"
+        *ngIf="validForm.controls.firstname.hasError('required') && (validForm.controls.firstname.dirty)">
+        Por favor ingresa tu nombre
+      </p>
+
+      <ion-item>
+        <ion-label floating>Primer Apellido</ion-label>
+        <ion-input type="text" class="placeholder-text" formControlName="lastname"
+          [class.invalid]="!validForm.controls.lastname.valid  && validForm.controls.lastname.dirty">
+        </ion-input>
+      </ion-item>
+
+      <p class="errorMessage"
+        *ngIf="validForm.controls.lastname.hasError('required') && (validForm.controls.lastname.dirty)">
+        Por favor ingresa primer apellido
+      </p>
+
+      <ion-item>
+        <ion-label floating>Identificacion</ion-label>
+        <ion-input type="text" class="placeholder-text" formControlName="identification"
+          [class.invalid]="!validForm.controls.identification.valid  && validForm.controls.identification.dirty">
+        </ion-input>
+      </ion-item>
+
+      <p class="errorMessage"
+        *ngIf="validForm.controls.identification.hasError('required') && (validForm.controls.identification.dirty)">
+        Por favor ingresa tu identificacion
+      </p>
+
+      <p class="errorMessage"
+        *ngIf="!validForm.controls.identification.hasError('required') && validForm.controls.identification.hasError('pattern')  && (validForm.controls.identification.dirty)">
+        Por favor ingresa una identificacion valida
+      </p>
+
+      <p class="errorMessage"
+        *ngIf="!validForm.controls.identification.hasError('required') && validForm.controls.identification.hasError('minLength')  && (validForm.controls.identification.dirty)">
+        Debe contener minimo 8 caracteres
+      </p>
+
+
+      <ion-item>
+        <ion-label>
+          <br>Fecha Nacimiento</ion-label>
+        <ion-datetime display-format="MMM DD, YYYY HH:mm" formControlName="birthdate">
+        </ion-datetime>
+      </ion-item>
+      <div padding></div>
+      <button ion-button block round type="submit" [disabled]="!validForm.valid">Registrarse</button>
+    </form>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,17 @@
+page-credit {
+    .list .item, .list .item-complex .item-content {
+        background: rgba(255,255,255,0);
+    }
+    p{
+        font-family: cursive;
+    }
+
+    .invalid {
+        border-bottom: 1px solid #FF6153;
+    }
+    .errorMessage {
+        color: red;
+            font-size: 10px;
+            margin-left: 20px;
+    }
+}
