@@ -11,7 +11,7 @@ import { CreditPage } from '../pages/credit/credit';
 })
 export class MyApp {
 
-  rootPage: any = CreditPage;
+  rootPage: any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

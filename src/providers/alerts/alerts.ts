@@ -9,7 +9,7 @@ export class AlertsProvider {
   constructor(public http: HttpClient, private toastCtrl: ToastController, private alertCtrl: AlertController) {
   }
 
-  toastController(info: any) {
+  toastController(info: any) { //Alertas para las pantallas
     let toast = this.toastCtrl.create({
       message: info,
       duration: 2000,
@@ -18,7 +18,7 @@ export class AlertsProvider {
     toast.present();
   }
 
-  alertController(title: any, info: any) {
+  alertController(title: any, info: any) { //Alertas para las pantallas
     let alert = this.alertCtrl.create({
       title: title,
       subTitle: info,

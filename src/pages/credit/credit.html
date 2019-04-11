@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -11,7 +11,7 @@
 <ion-content class="content" padding>
 
   <p>Hola
-    <!-- {{dataUser.firstname.value}} --> ya falta poco para completar tu credito, por favor diligencia estos datos para
+    {{dataUser.firstname.value}} ya falta poco para completar tu credito, por favor diligencia estos datos para
     verificar si podemos aprobar tu credito:</p>
 
   <ion-list>
@@ -19,33 +19,39 @@
     <form [formGroup]="validForm" class="form-data" (ngSubmit)="credit()">
 
       <ion-item>
-        <ion-label floating>Nombre Empresa</ion-label>
-        <ion-input type="text" class="placeholder-text" formControlName="name"
+        <ion-input placeholder="Nombre Empresa" formControlName="name"
           [class.invalid]="!validForm.controls.name.valid  && validForm.controls.name.dirty"></ion-input>
       </ion-item>
 
-      <p class="errorMessage" *ngIf="validForm.controls.name.hasError('required') && (validForm.controls.name.dirty)">
+      <p class="errorMessage" *ngIf="validForm.controls.name.hasError('required') && (validForm.controls.name.touched)">
         Por favor ingresa el nombre de tu empresa
       </p>
+      <br>
 
       <ion-item>
-        <ion-label floating>Nit Empresa</ion-label>
-        <ion-input type="text" class="placeholder-text" formControlName="nit"
+        <ion-input placeholder="Nit Empresa" formControlName="nit" autocomplete="off"
           [class.invalid]="!validForm.controls.nit.valid  && validForm.controls.nit.dirty"></ion-input>
       </ion-item>
 
-      <p class="errorMessage" *ngIf="validForm.controls.nit.hasError('required') && (validForm.controls.nit.dirty)">
+      <p class="errorMessage" *ngIf="validForm.controls.nit.hasError('required') && (validForm.controls.nit.touched)">
         Por favor ingresa el nit de tu empresa
       </p>
 
+      <p class="errorMessage"
+        *ngIf="!validForm.controls.nit.hasError('required') && validForm.controls.nit.hasError('pattern')  && (validForm.controls.nit.dirty)">
+        El nit solo debe contener numeros, del resto nos encargamos nosotros
+      </p>
+      <br>
+
+
       <ion-item>
-        <ion-label floating>Salario Actual</ion-label>
-        <ion-input type="text" class="placeholder-text" maxlength="8" formControlName="salary">
+        <ion-input placeholder="Salario Actual" maxlength="8" formControlName="salary" autocomplete="off"
+          [class.invalid]="!validForm.controls.salary.valid  && validForm.controls.salary.dirty">
         </ion-input>
       </ion-item>
 
       <p class="errorMessage"
-        *ngIf="validForm.controls.salary.hasError('required') && (validForm.controls.salary.dirty)">
+        *ngIf="validForm.controls.salary.hasError('required') &&  (validForm.controls.salary.touched)">
         Por favor ingresa tu salario
       </p>
 
@@ -53,6 +59,8 @@
         *ngIf="!validForm.controls.salary.hasError('required') && validForm.controls.salary.hasError('pattern')  && (validForm.controls.salary.dirty)">
         Tu salario debe contener solo numeros y el valor debe ser positivo
       </p>
+      <br>
+
 
       <ion-item>
         <ion-label>

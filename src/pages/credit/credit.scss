@@ -3,7 +3,11 @@ page-credit {
         background: rgba(255,255,255,0);
     }
     p{
-        font-family: cursive;
+        background-color: rgba(195, 193, 193, 0.27);
+        padding: 1em;
+        color: #fe5d26;
+        border-radius: 20px;
+        text-align: center;
     }
 
     .invalid {
@@ -13,5 +17,28 @@ page-credit {
         color: red;
             font-size: 10px;
             margin-left: 20px;
+    }
+    .scroll-content{
+        padding-bottom: 0px !important;
+    }
+    .form-data{
+        display: block;
+    }
+
+    ion-input{
+        background: rgba(245, 212, 202, 0.34);
+        width: 80%;
+        margin: auto;
+    }
+
+    ion-input input{
+        text-align: center;
+    }
+
+    div.divider{
+        margin-bottom: 5vh;
+    }
+    .item-md{
+        background: none;
     }
 }

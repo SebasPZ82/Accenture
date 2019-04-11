@@ -9,19 +9,13 @@ export class ValidateDateProvider {
   constructor(public http: HttpClient) {
   }
 
-  validateDate(day: any) {
+  validateDate(day: any) { //Servicio que valida el cumpleaños de un usuario
     var date = Date.now() - Date.parse(day)
     var age = new Date(date);
     return Math.abs(age.getUTCFullYear() - 1970)
   }
 
-  validateMonts(day: any) {
-    var date = Date.now() - Date.parse(day)
-    var age = new Date(date);
-    return Math.abs(age.getMonth())
-  }
-
-  validateYears(day: any) {
+  validateYears(day: any) { //Servicio que valida los meses y el dia
     var date = Date.parse(day)
     var age = new Date(date);
     var today = new Date();
@@ -31,7 +25,7 @@ export class ValidateDateProvider {
     months += today.getMonth();
     return {
       months: months <= 0 ? 0 : months,
-      today: today
+      today: today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()
     }
   }
 
